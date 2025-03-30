@@ -2,27 +2,29 @@ import { render, fireEvent, waitFor } from "@testing-library/react";
 import { QueryClient, QueryClientProvider } from "react-query";
 import Snapshots from "./Snapshots";
 import * as APIHooks from "../services/api";
-import { beforeEach, describe, expect, it, vi } from "vitest";
+import { MemoryRouter } from "react-router-dom";
 
-vi.mock("../services/api");
+jest.mock("../services/api");
 
 describe("Snapshots component", () => {
-  const getSnapshotsSpy = vi.spyOn(APIHooks, "getSnapshots");
-  const deleteSnapshotSpy = vi.spyOn(APIHooks, "deleteSnapshot");
   const queryClient = new QueryClient();
+  const getSnapshotsSpy = jest.spyOn(APIHooks, "getSnapshots");
+  const deleteSnapshotSpy = jest.spyOn(APIHooks, "deleteSnapshot");
 
-  beforeEach(async () => {
-    vi.resetAllMocks();
+  beforeEach(() => {
+    jest.resetAllMocks();
   });
 
   it("renders loading state", async () => {
     getSnapshotsSpy.mockReturnValue(Promise.resolve({ data: [] }));
     const { getByText } = render(
-      <QueryClientProvider client={queryClient}>
-        <Snapshots />
-      </QueryClientProvider>
+      <MemoryRouter>
+        <QueryClientProvider client={queryClient}>
+          <Snapshots />
+        </QueryClientProvider>
+      </MemoryRouter>
     );
-    expect(getByText("Loading...")).toBeDefined();
+    await waitFor(() => expect(getByText("Loading...")).toBeDefined());
   });
 
   it("renders successful data fetch", async () => {
@@ -40,9 +42,11 @@ describe("Snapshots component", () => {
     ];
     getSnapshotsSpy.mockReturnValue(Promise.resolve({ data }));
     const { queryAllByText } = render(
-      <QueryClientProvider client={queryClient}>
-        <Snapshots />
-      </QueryClientProvider>
+      <MemoryRouter>
+        <QueryClientProvider client={queryClient}>
+          <Snapshots />
+        </QueryClientProvider>
+      </MemoryRouter>
     );
     await waitFor(() => expect(queryAllByText("Snapshot 1")).toBeDefined());
   });
@@ -62,15 +66,20 @@ describe("Snapshots component", () => {
     ];
     getSnapshotsSpy.mockReturnValue(Promise.resolve({ data }));
     deleteSnapshotSpy.mockReturnValue(Promise.resolve({ id: 1 }));
-    const { queryAllByText, queryAllByRole } = render(
-      <QueryClientProvider client={queryClient}>
-        <Snapshots />
-      </QueryClientProvider>
+    const { queryAllByText, getByRole } = render(
+      <MemoryRouter>
+        <QueryClientProvider client={queryClient}>
+          <Snapshots />
+        </QueryClientProvider>
+      </MemoryRouter>
     );
     await waitFor(() => expect(queryAllByText("Snapshot 1")).toBeDefined());
-    const deleteButton = queryAllByRole("button", { name: "Delete" });
+    const deleteButton = getByRole("button", { name: "Delete" });
     expect(deleteButton).toBeDefined();
-    await waitFor(() => fireEvent.click(deleteButton[0]));
+    await waitFor(() => fireEvent.click(deleteButton));
+    const confirmButton = getByRole("button", { name: "Confirm" });
+    expect(confirmButton).toBeDefined();
+    await waitFor(() => fireEvent.click(confirmButton));
     await waitFor(() => expect(deleteSnapshotSpy).toHaveBeenCalledTimes(1));
   });
 });

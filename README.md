@@ -13,14 +13,7 @@
 - Do we allow pre taken photos to be uploaded?
 - Lazy loading? Virtualization?
 
-
-# TOOD
-- Tests
-- A11y
-- clean up
-
 # Would implement if more time
-- fix issue with material design in tests (vitest is new to me, would prefer to use jest just ran out of time)
 - Upload pre taken images
 - Detect face, allow cropping of image and brightness detection
 - use pnpm
@@ -28,3 +21,5 @@
 - pagination or lazy load
 - Soft delete
 - delete image off server (cron job for potential soft delete)
+- look at using portrait video to crop noise out
+- Snapshot upload tests

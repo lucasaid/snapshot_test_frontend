@@ -1,0 +1,160 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SnapshotCard component matches snapshot 1`] = `
+{
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <div
+        class="MuiPaper-root-dxTTWO fBCol MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 MuiCard-root-fharmA ifWMOL MuiCard-root"
+        style="--Paper-shadow: 0px 2px 1px -1px rgba(0,0,0,0.2),0px 1px 1px 0px rgba(0,0,0,0.14),0px 1px 3px 0px rgba(0,0,0,0.12);"
+      >
+        <img
+          alt="Top Image"
+          class="MuiCardMedia-root-hXMXRY hwHeVw MuiCardMedia-root MuiCardMedia-media MuiCardMedia-img"
+          src="http://localhost:3000/snapshots/top_image"
+        />
+        <img
+          alt="Front Image"
+          class="MuiCardMedia-root-hXMXRY hwHeVw MuiCardMedia-root MuiCardMedia-media MuiCardMedia-img"
+          src="http://localhost:3000/snapshots/front_image"
+        />
+        <div
+          class="MuiCardContent-root-uqTUl jvqcxk MuiCardContent-root"
+        >
+          <div
+            class="MuiTypography-root-ifjwsH cRvNiX MuiTypography-root MuiTypography-h5 MuiTypography-gutterBottom"
+          >
+            Snapshot 1
+          </div>
+          <p
+            class="MuiTypography-root-ifjwsH gPBGDZ MuiTypography-root MuiTypography-body2"
+          >
+            notes
+          </p>
+        </div>
+        <div
+          class="MuiCardActions-root-ipCtih eCxpfv MuiCardActions-root MuiCardActions-spacing"
+        >
+          <a
+            class="MuiButtonBase-root-liflAv gfDDvs MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeSmall MuiButton-textSizeSmall MuiButton-colorPrimary MuiButton-root-khEzsG eljVWz MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeSmall MuiButton-textSizeSmall MuiButton-colorPrimary"
+            data-discover="true"
+            href="/1"
+            tabindex="0"
+          >
+            Update
+          </a>
+          <button
+            class="MuiButtonBase-root-liflAv gfDDvs MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textError MuiButton-sizeSmall MuiButton-textSizeSmall MuiButton-colorError MuiButton-root-khEzsG dEaqME MuiButton-root MuiButton-text MuiButton-textError MuiButton-sizeSmall MuiButton-textSizeSmall MuiButton-colorError"
+            tabindex="0"
+            type="button"
+          >
+            Delete
+          </button>
+        </div>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      class="MuiPaper-root-dxTTWO fBCol MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 MuiCard-root-fharmA ifWMOL MuiCard-root"
+      style="--Paper-shadow: 0px 2px 1px -1px rgba(0,0,0,0.2),0px 1px 1px 0px rgba(0,0,0,0.14),0px 1px 3px 0px rgba(0,0,0,0.12);"
+    >
+      <img
+        alt="Top Image"
+        class="MuiCardMedia-root-hXMXRY hwHeVw MuiCardMedia-root MuiCardMedia-media MuiCardMedia-img"
+        src="http://localhost:3000/snapshots/top_image"
+      />
+      <img
+        alt="Front Image"
+        class="MuiCardMedia-root-hXMXRY hwHeVw MuiCardMedia-root MuiCardMedia-media MuiCardMedia-img"
+        src="http://localhost:3000/snapshots/front_image"
+      />
+      <div
+        class="MuiCardContent-root-uqTUl jvqcxk MuiCardContent-root"
+      >
+        <div
+          class="MuiTypography-root-ifjwsH cRvNiX MuiTypography-root MuiTypography-h5 MuiTypography-gutterBottom"
+        >
+          Snapshot 1
+        </div>
+        <p
+          class="MuiTypography-root-ifjwsH gPBGDZ MuiTypography-root MuiTypography-body2"
+        >
+          notes
+        </p>
+      </div>
+      <div
+        class="MuiCardActions-root-ipCtih eCxpfv MuiCardActions-root MuiCardActions-spacing"
+      >
+        <a
+          class="MuiButtonBase-root-liflAv gfDDvs MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeSmall MuiButton-textSizeSmall MuiButton-colorPrimary MuiButton-root-khEzsG eljVWz MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeSmall MuiButton-textSizeSmall MuiButton-colorPrimary"
+          data-discover="true"
+          href="/1"
+          tabindex="0"
+        >
+          Update
+        </a>
+        <button
+          class="MuiButtonBase-root-liflAv gfDDvs MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textError MuiButton-sizeSmall MuiButton-textSizeSmall MuiButton-colorError MuiButton-root-khEzsG dEaqME MuiButton-root MuiButton-text MuiButton-textError MuiButton-sizeSmall MuiButton-textSizeSmall MuiButton-colorError"
+          tabindex="0"
+          type="button"
+        >
+          Delete
+        </button>
+      </div>
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;

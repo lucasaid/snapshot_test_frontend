@@ -20,7 +20,6 @@ export const getSnapshots = async (): Promise<{ data: Snapshot[] }> => {
  * @returns {Promise<Snapshot>} A promise that resolves with the requested snapshot.
  */
 export const getSnapshot = async (id: number): Promise<{ data: Snapshot }> => {
-  console.log(`${SNAPSHOT_API_URL}/${id}`);
   const response = await fetch(`${SNAPSHOT_API_URL}/${id}`);
   return response.json();
 };

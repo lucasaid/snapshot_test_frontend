@@ -3,7 +3,7 @@ import { createSnapshot, getSnapshot, updateSnapshot } from "../services/api";
 import { Backdrop, Button, CircularProgress, TextField } from "@mui/material";
 
 import { Link, useNavigate, useParams } from "react-router-dom";
-import { IMAGES_URL } from "../utils/constants";
+import { IMAGES_URL, SNAPSHOT_DIMENSIONS } from "../utils/constants";
 import {
   ButtonWrapper,
   GridWrapper,
@@ -12,7 +12,13 @@ import {
 } from "./SnapshotsUpload.styles";
 import { captureImageFromVideo, clearCanvas } from "../utils/canvasUtils";
 import { startWebcam, stopTracks } from "../utils/webcamUtils";
+import styled from "styled-components";
 
+const Video = styled.video`
+  object-fit: cover;
+  width: ${SNAPSHOT_DIMENSIONS.width}px;
+  height: ${SNAPSHOT_DIMENSIONS.height}px;;
+`;
 /**
  * Component for uploading snapshots using webcam.
  */
@@ -66,7 +72,7 @@ const SnapshotsUpload = () => {
   // Function to start webcam and set stream
   const openWebcam = useCallback(async () => {
     if (videoRef.current) {
-      const stream = await startWebcam();
+      const stream = await startWebcam(videoRef.current);
       if (stream) setStream(stream);
     }
   }, [videoRef]);
@@ -98,6 +104,7 @@ const SnapshotsUpload = () => {
           videoRef.current
         );
         if (data) {
+          // Logging brightness for future implementations
           console.log({ brightness });
           if (direction === "top") {
             setTopImage(data);
@@ -157,8 +164,8 @@ const SnapshotsUpload = () => {
       <canvas
         style={{ display: "none" }}
         ref={canvasRef}
-        width={320}
-        height={240}
+        width={SNAPSHOT_DIMENSIONS.width/2}
+        height={SNAPSHOT_DIMENSIONS.height/2}
       />
 
       <h1>Upload Snapshots</h1>
@@ -166,7 +173,7 @@ const SnapshotsUpload = () => {
         Back
       </Button>
       <GridWrapper>
-        <video width={640} height={480} id="video" ref={videoRef}></video>
+        <Video width={SNAPSHOT_DIMENSIONS.width} height={SNAPSHOT_DIMENSIONS.height} ref={videoRef} />
         <ImageWrapper>
           <Overlay>Top</Overlay>
           <img src={topImage} />

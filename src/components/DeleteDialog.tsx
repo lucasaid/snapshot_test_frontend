@@ -46,7 +46,7 @@ export const useDeleteDialog = () => {
         <DialogActions>
           <Button onClick={handleDeleteCancel}>Cancel</Button>
           <Button color="error" onClick={handleDeleteConfirm} autoFocus>
-            Delete
+            Confirm
           </Button>
         </DialogActions>
       </Dialog>

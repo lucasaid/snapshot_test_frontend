@@ -14,17 +14,17 @@ import "@fontsource/roboto/700.css";
 
 const queryClient = new QueryClient();
 createRoot(document.getElementById("root")!).render(
+  <Router>
   <StrictMode>
     <QueryClientProvider client={queryClient}>
       <Container maxWidth="lg">
-        <Router>
           <Routes>
             <Route index element={<Snapshots />} />
             <Route path="/upload" element={<SnapshotsUpload />} />
             <Route path="/:id" element={<SnapshotsUpload />} />
           </Routes>
-        </Router>
       </Container>
     </QueryClientProvider>
   </StrictMode>
+  </Router>
 );
